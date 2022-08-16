@@ -1,5 +1,5 @@
 # Selecting an Analog Sample
-Adapted from Cat Fielder.
+A code that allows for selection of an anlog sample in various parameter spaces. Adapted from Cat Fielder.
 
 # Installation
 Directly from Repository
@@ -15,3 +15,6 @@ This code is sepcifically built to work around a cleaned sample. For example, in
 If you want to work with this specific sample please contact me!
 
 # Description of Scripts
+To make a sample of analogs, values are randomly drawn from the fiducial MW PDF in the parameter space of interest (minimum of two parameters). For each set of values, the nearest neighbors are found in a binary tree constructed from the volume-limited sample.
+
+## Step 1:
