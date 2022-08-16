@@ -18,3 +18,7 @@ If you want to work with this specific sample please contact me!
 To make a sample of analogs, values are randomly drawn from the fiducial MW PDF in the parameter space of interest (minimum of two parameters). For each set of values, the nearest neighbors are found in a binary tree constructed from the volume-limited sample.
 
 ## Step 1:
+Create a dataframe of your test sample (the sample you're interested in) and your training sample (the sample from which you want to select analogs). Make sure the parameters you want to match these dataframes on have the same names in both dataframes. In Bonidie et al. (2022), we used effective temperature, log(g) and [Fe/H] as the selection parameters.
+
+## Step 2:
+Create a dataframe that consists of the mean and standard deviation of each parameter in your test sample.
