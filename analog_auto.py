@@ -1,3 +1,10 @@
+import numpy as np
+import sklearn
+from sklearn import linear_model
+import scipy
+from scipy import spatial
+import random
+
 def analog_auto(
     tree,
     test_sample,
@@ -11,6 +18,36 @@ def analog_auto(
     delta_cutoff=False,
     **kwargs
 ):
+    """Selects a single analog from the given test_sample.
+ 
+    Given the selection parameters from a star in the test sample, will return the
+    single index value of an analogous star randomly selected from the N nearest 
+    neighbors in a cKDTree of the given catalogs around a point drawn from 
+    the sample's posterior probability distribution. 
+  
+    Args:
+        tree (KDTree/binary tree): A tree created from catalogs being used to 
+            find analogs in. Make sure these values are matched in RA and Dec, 
+            and the data is scaled approiately. 
+            Example:
+                tree = spatial.cKDTree(search_space)
+        test_sample (dataframe) :
+        n_neighbors (int): The number of neighbors to search
+            for around the given point.
+        max_sigma (int): The maximum number of sigma used to 
+            calculate the upper bound distance for the query. Typically between
+            5 and 7.
+        silent (bool): Default is True, which makes the function not return 
+            print functions. If set to False the print statements are output.
+        equal_weight (bool): Default is False, so the weighting in the selection 
+            of the analogs from the n nearest neighbors depends on how far the
+            neighbor is from the search point. If set to True then the 
+            weighting is equal/the default of numpy.random.choice()
+    Returns:
+        An int representing the index of a single test_sample-like star.
+    Raises:
+        ValueError: If there is only 1 parameter input. The minimum is 2.
+    """
    
     n_params = len(params)
     if not silent:
