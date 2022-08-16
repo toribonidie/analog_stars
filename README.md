@@ -5,5 +5,4 @@ Adapted from Cat Fielder.
 Directly from Repository
 ```
 git clone https://github.com/toribonidie/analog_stars
-
 ```
