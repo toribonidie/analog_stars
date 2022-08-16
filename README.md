@@ -1,2 +1,2 @@
-# analog_stars
+# Select analog stars.
 Adapted from Cat Fielder.
