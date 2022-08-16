@@ -1,3 +1,7 @@
+from scipy import spatial
+import numpy as np
+import pandas as pd
+
 def select_analogs(training_sample, test_sample, test_stats, n_analogs, n_star, params, **kwargs):
     search_space = np.zeros((training_sample[params].shape[0], training_sample[params].shape[1]))
     for j, i in enumerate(params):
