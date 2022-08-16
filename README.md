@@ -26,4 +26,4 @@ Create a "stats" dataframe that consists of the mean and standard deviation of e
 ### Step 3: 
 Run ```select_analogs.py```. The ```select_analogs()``` function takes in a dataframe of the test sample (the Sgr Dsph sample in Bonidie et al. (2022)) and a dataframe of the training sample (the MW star sample in Bonidie et al. (2022)), as well as the stats dataframe you create in step 2. Ensure the columns of each parameter of interest has the same name in each of these dataframes, This function accesses ```analog_auto.py```, which contains a function for selecting a single analog from the binary tree. This will return a list of indices that correspond to the stars in the training sample that were selected as analogs.
 
-## Please refer to ```example.py``` to see an example of how to implement this code.
+### Please refer to ```example.py``` to see an example of how to implement this code.
