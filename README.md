@@ -21,4 +21,7 @@ To make a sample of analogs, values are randomly drawn from the fiducial MW PDF 
 Create a dataframe of your test sample (the sample you're interested in) and your training sample (the sample from which you want to select analogs). Make sure the parameters you want to match these dataframes on have the same names in both dataframes. In Bonidie et al. (2022), we used effective temperature, log(g) and [Fe/H] as the selection parameters.
 
 ### Step 2:
-Create a dataframe that consists of the mean and standard deviation of each parameter in your test sample.
+Create a "stats" dataframe that consists of the mean and standard deviation of each parameter in your test sample.
+
+### Step 3: 
+Run ```select_analogs.py```. The ```select_analogs()``` function takes in a dataframe of the test sample (the Sgr Dsph sample in Bonidie et al. (2022)) and a dataframe of the training sample (the MW star sample in Bonidie et al. (2022)), as well as the stats dataframe you create in step 2. Ensure the columns of each parameter of interest has the same name in each of these dataframes, This function accesses ```analog_auto.py```, which contains a function for selecting a single analog from the binary tree.
