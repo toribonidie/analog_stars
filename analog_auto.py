@@ -31,7 +31,9 @@ def analog_auto(
             and the data is scaled approiately. 
             Example:
                 tree = spatial.cKDTree(search_space)
-        test_sample (dataframe) :
+        test_sample (dataframe) : A dataframe that contains the selection parameters for
+            for the sample of interest. It can contain other columns outside of the 
+            selection parameters.
         n_neighbors (int): The number of neighbors to search
             for around the given point.
         max_sigma (int): The maximum number of sigma used to 
@@ -53,6 +55,8 @@ def analog_auto(
     if not silent:
         print("You have {} parameter input.".format(n_params))
 
+    # Find nearest neighbors
+    # First we must scale the data correctly
     base_point = np.zeros((n_params))
     columns = list(test_sample[params])
     
