@@ -14,10 +14,14 @@ def select_analogs(training_sample, test_sample, test_stats, n_analogs, n_star, 
     
     Args:
         training_sample (dataframe): A dataframe containing the parameters where analogs are
-            being searched for. 
-        test_sample (dataframe): A dataframe containing the parameters of interest
+            being searched for. It can contain other columns outside of the 
+            selection parameters.
+        test_sample (dataframe): A dataframe that contains the selection parameters for
+            for the sample of interest. It can contain other columns outside of the 
+            selection parameters.
         n_analogs (int): The number of analogs to obtain.
         params (array): An array of the parameters from which to select analogs.
+        
     Returns:
         An array of indices of a sample of analog stars in the 
         parameter space.
