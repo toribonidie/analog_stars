@@ -1,11 +1,10 @@
 from scipy import spatial
 import numpy as np
-import pandas as pd
 # Specifically written scripts for this work
 from analog_auto import analog_auto
 
 def select_analogs(training_sample, test_sample, test_stats, n_analogs, n_star, params, **kwargs):
-      """Selects a single Milky Way analog from the given catalogs.
+    """Selects a single Milky Way analog from the given catalogs.
  
     Given a set of Milky Way parameters (e.g. Teff, log(g),[Fe/H])
     will select a set of analog stars from a binary tree constructed
