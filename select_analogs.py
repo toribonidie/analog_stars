@@ -18,6 +18,9 @@ def select_analogs(training_sample, test_sample, test_stats, n_analogs, n_star, 
         test_sample (dataframe): A dataframe that contains the selection parameters for
             for the sample of interest. It can contain other columns outside of the 
             selection parameters.
+        test_stats (dataframe): A dataframe that contains the mean and standard deviation
+            for each selection parameter. Each row is a parameter, column 1 the mean, labeled 
+            "mean", and column 2 in the standard deviation, labeled "sigma"
         n_analogs (int): The number of analogs to obtain.
         params (array): An array of the parameters from which to select analogs.
         
