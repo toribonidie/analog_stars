@@ -37,7 +37,7 @@ def select_analogs(training_sample, test_sample, test_stats, n_analogs, n_star, 
     while np.size(analog_idx) < n_analogs:
         realization = test_sample[params].copy(deep=True)
         realization.loc["point"] = [np.random.normal(loc=it[0], scale=it[1]) for it in (test_stats.T.values)]
-        analog_idx_i, dist_i = analog_auto(tree, realization, test_stats, n_star, params, **kwargs)
+        analog_idx_i, dist_i = analog_auto(tree, test_sample, test_stats, n_star, params, **kwargs)
         if np.isnan(analog_idx_i) == False:
             analog_idx.append(analog_idx_i)
             dists.append(dist_i)
