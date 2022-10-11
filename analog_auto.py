@@ -8,6 +8,7 @@ import random
 def analog_auto(
     tree,
     test_sample,
+    test_stats,
     n_star,
     params,
     n_neighbors,
