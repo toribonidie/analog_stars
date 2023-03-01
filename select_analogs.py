@@ -31,6 +31,7 @@ def select_analogs(training_sample, test_sample, test_stats, n_analogs, n_star, 
     search_space = np.zeros((training_sample[params].shape[0], training_sample[params].shape[1]))
     for j, i in enumerate(params):
         search_space[:, j] = (training_sample[params[j]].values - test_stats.at["mean", params[j]]) / test_stats.at["sigma", params[j]]
+        #could use "sklearn.preprocessing.StandardScaler" instead I think, will update this later
     tree = spatial.cKDTree(search_space)
     analog_idx = []
     dists = []
